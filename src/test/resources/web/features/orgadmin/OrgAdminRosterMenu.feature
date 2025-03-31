@@ -57,7 +57,7 @@ Feature: Org Admin Roster Menu Test
       | schpagetitle     | title         |
       | View All Schools | Edit school : |
 
-  @orgadmin_verifyaddnewschoolpageerrormessage @Sprint4 @IQA_99 @run
+  @orgadmin_verifyaddnewschoolpageerrormessage @Sprint4 @IQA_99
   Scenario Outline: Org Admin Roster : RosterPage-VerifyAddNewSchoolPageErrorMessage
     When I navigate into menu "ROSTER" "Add New School"
     And I am able to click on add school button
@@ -484,7 +484,7 @@ Feature: Org Admin Roster Menu Test
       | School_Name | Class_Name | Status   | Child_Name | Child_Skill_Page   |
       | ele School  | ele class  | Inactive | Vikram H   | Child Skill Detail |
 
-  @orgadmin_ViewAdnEditParentsPage @Sprint5 @IQA_110 @run
+  @orgadmin_ViewAdnEditParentsPage @Sprint5 @IQA_110 
   Scenario Outline: Roster-View and Edit Parents Page
     When I navigate to the and "ROSTER" "View & Edit Family Members"
     Then I checked for the Popup
@@ -533,7 +533,7 @@ Feature: Org Admin Roster Menu Test
       | page          |
       | Child Profile |
 
-  @orgadmin_roster_menu_logout @Sprint5 @IQA_55 @PEG_16361 @class @run
+  @orgadmin_roster_menu_logout @Sprint5 @IQA_55 @PEG_16361 @class 
   Scenario: Verify Org Admin Roster Menu - LogOut button from Account Subsection
     Then I hover over Account menu
     Then Click on Log Out Menu
