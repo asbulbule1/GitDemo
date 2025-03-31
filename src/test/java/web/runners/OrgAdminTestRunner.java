@@ -17,7 +17,7 @@ import io.cucumber.testng.CucumberOptions;
 import web.stepdefs.BaseClass;
 
 @CucumberOptions(
-        features = {"src\\test\\resources\\web\\features\\orgadmin\\OrgAdminRosterMenu.feature"},
+        features = {"src/test/resources/web/features/orgadmin/OrgAdminRosterMenu.feature"},
         glue = {"web/stepdefs"},
         tags = "@test",
         plugin = {	"html:test-output/cucumber-reports/cucumber-html-report.html",
