@@ -129,7 +129,7 @@ Feature: Org Admin Roster Menu Test
       | EditInfo  | viewTitle        | EditTitle  |
       | Edit Info | View All Classes | Edit Class |
 
-  @REPORTS_Add_new_class @Sprint4 @IQA_104 @run
+  @REPORTS_Add_new_class @Sprint4 @IQA_104
   Scenario Outline: Org Admin Roster : Reports - Verify ROSTER- Add New Class
     When I navigate_Top_MenuBar "ROSTER" "Add New Class"
     Then I checked for the Popup
@@ -149,7 +149,7 @@ Feature: Org Admin Roster Menu Test
       | CreateClass       | CreateClassbtn | back | Schooldropdown | Nameclass       | TeacherClass                    | CurriculumClass                      | PictureClass                              | Cancelbutton |
       | Create Your Class | Create Class   | Back | School         | Name this class | Assign a Teacher to this class. | What curriculum does this class use? | Choose a picture to represent this class. | Cancel       |
 
-  @REPORTS_Add_new_class_error_messages @Sprint4 @IQA_105 @run
+  @REPORTS_Add_new_class_error_messages @Sprint4 @IQA_105 
   Scenario Outline: Org Admin Roster : Reports - Verify ROSTER- Add New Class error messages
     When I navigate_Top_MenuBar "ROSTER" "Add New Class"
     Then I checked for the Popup
@@ -164,7 +164,7 @@ Feature: Org Admin Roster Menu Test
       | CreateClass  | Errorschool            | Errorclass                 | Errorchildren          | Errorcurriculum        | Errorpicture                      |
       | Create Class | This field is required | Class name cannot be blank | This field is required | This field is required | Please select icon for your class |
 
-  @REPORTS_Add_new_class_button @Sprint4 @IQA_106 @run
+  @REPORTS_Add_new_class_button @Sprint4 @IQA_106
   Scenario Outline: Org Admin Roster : Reports - Verify ROSTER- Add New Class button
     When I navigate_Top_MenuBar "ROSTER" "Add New Class"
     Then I checked for the Popup
@@ -182,7 +182,7 @@ Feature: Org Admin Roster Menu Test
       | CreateClass  | Expected_SchoolName | Expected_ClassName | Expected_Assignteacher | Expected_curriculum |
       | Create Class | alden school1       | Morning Class      | Kunal teacher          | custom curriculum   |
 
-  @REPORTS_Add_new_class @sprint4 @IQA_107 @run
+  @REPORTS_Add_new_class @sprint4 @IQA_107 
   Scenario Outline: Org Admin Roster : Reports - Verify ROSTER- Add New Class Cancel button
     When I navigate_Top_MenuBar "ROSTER" "Add New Class"
     Then I checked for the Popup
@@ -364,7 +364,7 @@ Feature: Org Admin Roster Menu Test
       | pagename                             | popup          | hatchpassword | hatchusername | msg1                                                   | msg2                                                         |
       | HatchSync - Teaching Strategies GOLD | HatchSync GOLD | Infogen@2022  | TestAmit04    | Connection already exist for entered user credentials. | Something went wrong when we tried to activate your service. |
 
-  @OrgAdmin_ROSTER_Add_New_Child_Side_Panel @IQA_112 @PEG_16361 @run
+  @OrgAdmin_ROSTER_Add_New_Child_Side_Panel @IQA_112 @PEG_16361
   Scenario: Org Admin Roster : ROSTER- Add New Child Page side panel
     When I navigate to the and "ROSTER" "Add New Child"
     Then I checked for the Popup
