@@ -31,7 +31,7 @@ Feature: Org Admin Roster Menu Test
       | schpagetitle     | title         |
       | View All Schools | Edit school : |
 
-  @orgadmin_verifyviewallclassespages @Sprint4 @IQA_96 @school
+  @orgadmin_verifyviewallclassespages @Sprint4 @IQA_96 @school @run
   Scenario Outline: Org Admin Roster :RosterPage-VerifyViewandEditClassPage
     When I navigate to the and "ROSTER" "View & Edit Schools"
     Then I checked for the Popup
@@ -57,7 +57,7 @@ Feature: Org Admin Roster Menu Test
       | schpagetitle     | title         |
       | View All Schools | Edit school : |
 
-  @orgadmin_verifyaddnewschoolpageerrormessage @Sprint4 @IQA_99
+  @orgadmin_verifyaddnewschoolpageerrormessage @Sprint4 @IQA_99 @run
   Scenario Outline: Org Admin Roster : RosterPage-VerifyAddNewSchoolPageErrorMessage
     When I navigate into menu "ROSTER" "Add New School"
     And I am able to click on add school button
@@ -533,7 +533,7 @@ Feature: Org Admin Roster Menu Test
       | page          |
       | Child Profile |
 
-  @orgadmin_roster_menu_logout @Sprint5 @IQA_55 @PEG_16361 @class
+  @orgadmin_roster_menu_logout @Sprint5 @IQA_55 @PEG_16361 @class @run
   Scenario: Verify Org Admin Roster Menu - LogOut button from Account Subsection
     Then I hover over Account menu
     Then Click on Log Out Menu
