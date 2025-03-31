@@ -2,17 +2,24 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      java: corretto17  # Use the correct Java version
     commands:
       - echo "Installing dependencies..."
-      - mvn clean install # Ensure dependencies are installed
+      - yum install -y maven
+      - mvn clean install -DskipTests  # Install project dependencies without running tests
 
   build:
     commands:
-      - echo "Running TestNG tests..."
-      - mvn test -Dsurefire.suiteXmlFiles=OrgAdminTestSuite.xml
+      - echo "Running Selenium tests..."
+      - mvn test  # Execute Selenium test cases
+
+  post_build:
+    commands:
+      - echo "Uploading test reports to S3..."
+      - aws s3 cp target/surefire-reports/ s3://your-test-results-bucket/ --recursive
 
 artifacts:
   files:
-    - target/surefire-reports/**/*  # Uploads test reports to CodeBuild artifacts
-    - target/*.jar
-  discard-paths: yes
+    - "target/surefire-reports/**"
+  discard-paths: no
