@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Installing dependencies..."
+      - mvn clean install # Ensure dependencies are installed
+
+  build:
+    commands:
+      - echo "Running TestNG tests..."
+      - mvn test -Dsurefire.suiteXmlFiles=OrgAdminTestSuite.xml
+
+artifacts:
+  files:
+    - target/surefire-reports/**/*  # Uploads test reports to CodeBuild artifacts
+    - target/*.jar
+  discard-paths: yes
