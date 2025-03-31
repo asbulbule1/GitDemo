@@ -18,8 +18,10 @@ phases:
     commands:
       - echo "Uploading test reports to S3..."
       - aws s3 cp target/surefire-reports/ s3://your-test-results-bucket/ --recursive
+      - aws s3 cp test-output/SparkReport/ s3://your-test-results-bucket/SparkReport/ --recursive
 
 artifacts:
   files:
     - "target/surefire-reports/**"
+    - "test-output/SparkReport/**"  # Ensure the correct path for Extent Reports
   discard-paths: no
