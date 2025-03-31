@@ -19,7 +19,7 @@ import web.stepdefs.BaseClass;
 @CucumberOptions(
         features = {"src\\test\\resources\\web\\features\\orgadmin\\OrgAdminRosterMenu.feature"},
         glue = {"web/stepdefs"},
-        tags = "@pending",
+        tags = "@test",
         plugin = {	"html:test-output/cucumber-reports/cucumber-html-report.html",
         			"json:test-output/json-reports/cucumber.json",
         			"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
