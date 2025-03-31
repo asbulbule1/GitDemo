@@ -12,17 +12,17 @@ phases:
   build:
     commands:
       - echo "Running Selenium tests..."
-      - mvn test || echo "Tests failed, proceeding to upload reports"
+      - mvn test -Dreport.outputdir=test-output/SparkReport/ || echo "Tests failed, proceeding to upload reports"
 
   post_build:
     commands:
       - echo "Checking if reports exist before uploading..."
-      - ls -R target/surefire-reports/
-      - ls -R test-output/SparkReport/
+      - if [ -d "target/surefire-reports" ]; then ls -R target/surefire-reports/; else echo "Surefire reports NOT FOUND"; fi
+      - if [ -d "test-output/SparkReport" ]; then ls -R test-output/SparkReport/; else echo "Extent reports NOT FOUND"; fi
 
       - echo "Uploading test reports to S3..."
-      - aws s3 cp target/surefire-reports/ s3://myawsbucketasbulbule1/ --recursive || echo "Surefire reports upload failed"
-      - aws s3 cp test-output/SparkReport/ s3://myawsbucketasbulbule1/ --recursive || echo "Extent reports upload failed"
+      - if [ -d "target/surefire-reports" ]; then aws s3 cp target/surefire-reports/ s3://myawsbucketasbulbule1/ --recursive; else echo "Skipping Surefire reports upload"; fi
+      - if [ -d "test-output/SparkReport" ]; then aws s3 cp test-output/SparkReport/ s3://myawsbucketasbulbule1/ --recursive; else echo "Skipping Extent reports upload"; fi
 
 artifacts:
   files:
