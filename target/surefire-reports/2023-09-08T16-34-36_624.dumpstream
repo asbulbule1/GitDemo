@@ -1,0 +1,5 @@
+# Created at 2023-09-08T16:34:36.784
+Boot Manifest-JAR contains absolute paths in classpath 'D:\Infogen\Automation workbench\com.hatch_productionS1toS9_24th_august_23_\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+
