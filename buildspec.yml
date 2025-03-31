@@ -17,8 +17,8 @@ phases:
   post_build:
     commands:
       - echo "Uploading test reports to S3..."
-      - aws s3 cp target/surefire-reports/ s3://your-test-results-bucket/ --recursive
-      - aws s3 cp test-output/SparkReport/ s3://your-test-results-bucket/SparkReport/ --recursive
+      - aws s3 cp target/surefire-reports/ s3://myawsbucketasbulbule1/ --recursive
+      - aws s3 cp test-output/SparkReport/ s3://myawsbucketasbulbule1/ --recursive
 
 artifacts:
   files:
