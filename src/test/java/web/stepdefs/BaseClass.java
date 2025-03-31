@@ -110,6 +110,15 @@ public class BaseClass {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 
+//code to execute remotely 
+options.addArguments("--remote-allow-origins=*");
+options.addArguments("--disable-dev-shm-usage"); // Helps in Docker/Linux environments
+options.addArguments("--no-sandbox");
+options.addArguments("--disable-gpu");
+options.addArguments("--disable-extensions");
+options.addArguments("--headless"); // Remove if you need to see the browser
+options.addArguments("user-data-dir=" + System.getProperty("java.io.tmpdir")); // Avoid conflicts
+
 			Map<String, Object> prefs = new HashMap<>();
 			Map<String, Integer> connectSettings=new HashMap<String,Integer>(); // Added By Amit for Camera Access Handle
 			Map<String, Object> profile=new HashMap<String,Object>();           // Added By Amit for Camera Access Handle   
