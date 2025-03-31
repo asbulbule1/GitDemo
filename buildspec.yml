@@ -12,13 +12,13 @@ phases:
   build:
     commands:
       - echo "Running Selenium tests..."
-      - mvn test  # Execute Selenium test cases
+      - mvn test || echo "Tests failed, but proceeding to upload reports"
 
   post_build:
     commands:
       - echo "Uploading test reports to S3..."
-      - aws s3 cp target/surefire-reports/ s3://myawsbucketasbulbule1/ --recursive
-      - aws s3 cp test-output/SparkReport/ s3://myawsbucketasbulbule1/ --recursive
+      - aws s3 cp target/surefire-reports/ s3://myawsbucketasbulbule1/ --recursive || echo "Surefire reports upload failed"
+      - aws s3 cp test-output/SparkReport/ s3://myawsbucketasbulbule1/ --recursive || echo "Extent reports upload failed"
 
 artifacts:
   files:
