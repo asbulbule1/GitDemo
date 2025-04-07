@@ -47,7 +47,7 @@ public class OrgAdminTestRunner extends AbstractTestNGCucumberTests
     @AfterSuite
     public void sendReportEmail() throws MessagingException, IOException
     {
-    	String report_filepath = "test-output//SparkReport//HatchAutomationExecutionReport.html";
+    	String report_filepath = "test-output/SparkReport/HatchAutomationExecutionReport.html";
 
 //    	//clean report file
 //    	Path path = Paths.get(report_filepath);

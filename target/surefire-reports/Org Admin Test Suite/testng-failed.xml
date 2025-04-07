@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="classes" name="Failed suite [Org Admin Test Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" parallel="classes" name="Org Admin Test(failed)" verbose="0">
+    <classes>
+      <class name="web.runners.OrgAdminTestRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="init"/>
+          <include name="tearDownClass"/>
+          <include name="sendReportEmail"/>
+        </methods>
+      </class> <!-- web.runners.OrgAdminTestRunner -->
+    </classes>
+  </test> <!-- Org Admin Test(failed) -->
+</suite> <!-- Failed suite [Org Admin Test Suite] -->
